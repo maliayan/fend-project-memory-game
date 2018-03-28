@@ -11,6 +11,16 @@ let cardList = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "b
  *   - add each card's HTML to the page
  */
 
+ function createCardDeck(){
+   var deckHtmlContent = '';
+   cardList = shuffle(cardList);
+   for(var i=0; i<cardList.length; i++){
+     deckHtmlContent += "<li class='card'><i class='fa fa-" + cardList[i] + "'></i></li>";
+   }
+   document.querySelector('.deck').innerHTML = deckHtmlContent;
+ }
+
+ window.addEventListener("load", createCardDeck());
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
