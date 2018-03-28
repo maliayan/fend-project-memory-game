@@ -49,11 +49,17 @@ function shuffle(array) {
  */
 
  var card = document.getElementsByClassName("card");
+ let openCards = [];
+
+ var addOpenCards = function(){
+   openCards.push(this);
+ };
 
  var showCard = function(){
      this.classList.add("open", "show");
  };
 
- for (var i = 0; i < card.length; i++) {
+ for (var i=0; i < card.length; i++) {
      card[i].addEventListener("click", showCard);
+     card[i].addEventListener("click", addOpenCards);
  }
