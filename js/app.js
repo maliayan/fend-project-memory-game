@@ -128,8 +128,8 @@ function stopTime(){
   */
 
  function trueSelection(){
-   openCards[0].classList.add("match", "cannotSelect");
-   openCards[1].classList.add("match", "cannotSelect");
+   openCards[0].classList.add("match", "cannotSelect", "zoom");
+   openCards[1].classList.add("match", "cannotSelect", "zoom");
    openCards[1].classList.remove("show", "open", "flip");
    openCards[0].classList.remove("show", "open", "flip");
    matchedCards.push(openCards[0]);

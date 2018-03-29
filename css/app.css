@@ -198,3 +198,25 @@ h1 {
   transition: 0.4s;
 	transform-style: preserve-3d;
 }
+
+/*
+ * Styles for zoom animation
+ */
+
+ @keyframes zoom {
+  0% { zoom: 100%; }
+  10% { zoom: 105%; }
+  20% { zoom: 110%; }
+  30% { zoom: 115%; }
+  40% { zoom: 120%; }
+  50% { zoom: 130%; }
+  60% { zoom: 120%; }
+  70% { zoom: 115%; }
+  80% { zoom: 110%; }
+  90% { zoom: 105%; }
+  100% { zoom: 100%; }
+}
+
+.card.zoom {
+  animation: zoom 0.5s;
+}
