@@ -21,6 +21,7 @@ let cardList = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "b
  };
 
  window.addEventListener("load", createCardDeck());
+ window.addEventListener("load", startTime());
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -56,9 +57,10 @@ function shuffle(array) {
  var messageRating = document.querySelector(".messageRating");
 
  function isFinished(){
-   if(matchedCards.length === 4){
+   if(matchedCards.length === 2){
      var message = document.getElementById("message");
      message.style.display = "block";
+     stopTime();
    }
  };
 
@@ -74,6 +76,20 @@ function shuffle(array) {
      messageRating.innerHTML = '<i class="fa fa-star"></i>';
    }
  };
+
+var playTime;
+
+function startTime(){
+    var messageTime = document.querySelector(".messageTime");
+    messageTime.innerHTML = 0;
+    playTime = setInterval(function(){
+      messageTime.innerHTML++;
+    }, 1000);
+  };
+
+function stopTime(){
+    clearInterval(playTime);
+  };
 
  var addOpenCards = function(){
    openCards.push(this);
