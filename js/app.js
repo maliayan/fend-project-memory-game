@@ -55,7 +55,7 @@ function shuffle(array) {
  messageMoves.innerHTML = 0;
 
  function isFinished(){
-   if(matchedCards.length === 2){
+   if(matchedCards.length === 4){
      var message = document.getElementById("message");
      message.style.display = "block";
    }
@@ -63,6 +63,14 @@ function shuffle(array) {
 
  var moves = document.querySelector(".moves");
  moves.innerHTML = 0;
+
+ function starRating(){
+   if(moves.innerHTML == 4){
+     document.querySelector(".star-3").style.visibility = "hidden";
+   } if(moves.innerHTML == 10){
+     document.querySelector(".star-2").style.visibility = "hidden";
+   }
+ };
 
  var addOpenCards = function(){
    openCards.push(this);
@@ -85,6 +93,7 @@ function shuffle(array) {
    openCards = [];
    moves.innerHTML++;
    messageMoves.innerHTML++;
+   starRating();
    isFinished();
  };
 
@@ -95,6 +104,7 @@ function shuffle(array) {
         openCards = [];
         moves.innerHTML++;
         messageMoves.innerHTML++;
+        starRating();
     },550);
 };
 
