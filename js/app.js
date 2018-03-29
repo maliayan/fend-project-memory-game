@@ -1,14 +1,11 @@
 /*
- * Create a list that holds all of your cards
+ * The list that holds all of your cards
  */
 let cardList = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb",
                 "diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "bicycle", "bomb"];
 
 /*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
+ * Displaying the cards on the page
  */
 
  function createCardDeck(){
@@ -39,14 +36,8 @@ function shuffle(array) {
 };
 
 /*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ * General variables to use later
+ * Initial values of them
  */
 
  var card = document.getElementsByClassName("card");
@@ -58,6 +49,12 @@ function shuffle(array) {
  var time = document.querySelector(".time");
  time.innerHTML = 0;
  var messageButton = document.querySelector(".messageButton");
+ var moves = document.querySelector(".moves");
+ moves.innerHTML = 0;
+
+ /*
+  * Is the game finished?
+  */
 
  function isFinished(){
    if(matchedCards.length === 2){
@@ -67,12 +64,18 @@ function shuffle(array) {
    }
  };
 
+ /*
+  * Play again!
+  */
+
  function playAgain(){
     location.reload();
  };
 
- var moves = document.querySelector(".moves");
- moves.innerHTML = 0;
+ /*
+  * Rating functionality
+  * Stars will decrease at some points
+  */
 
  function starRating(){
    if(moves.innerHTML == 4){
@@ -83,6 +86,11 @@ function shuffle(array) {
      messageRating.innerHTML = '<i class="fa fa-star"></i>';
    }
  };
+
+ /*
+  * Playing time value
+  * Start and stop functions for this time value
+  */
 
 var playTime;
 
@@ -99,6 +107,11 @@ function stopTime(){
     clearInterval(playTime);
   };
 
+  /*
+   * Adding opened cards to an array
+   * Determining the selection as true or false
+   */
+
  var addOpenCards = function(){
    openCards.push(this);
    if(openCards.length === 2){
@@ -109,6 +122,10 @@ function stopTime(){
      }
    }
  };
+
+ /*
+  * Matched cards!
+  */
 
  function trueSelection(){
    openCards[0].classList.add("match", "cannotSelect");
@@ -124,6 +141,10 @@ function stopTime(){
    isFinished();
  };
 
+ /*
+  * Unmatched cards:(
+  */
+
  function falseSelection(){
     setTimeout(function(){
       openCards[0].classList.remove("show", "open", "cannotSelect");
@@ -135,12 +156,21 @@ function stopTime(){
     },550);
 };
 
+/*
+ * Showing the card with clicking
+ * But avoiding selecting more than two cards
+ */
+
  var showCard = function(){
    if(document.querySelectorAll(".open").length === 2){
      return false;
   }
      this.classList.add("open", "show", "cannotSelect");
  };
+
+ /*
+  * Event listeners for the cards with clicking
+  */
 
  for (var i=0; i < card.length; i++) {
      card[i].addEventListener("click", showCard);
