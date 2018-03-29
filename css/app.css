@@ -188,3 +188,13 @@ h1 {
 .card.wiggle {
   animation: wiggle 0.4s;
 }
+
+/*
+ * Styles for flip animation
+ */
+
+.card.flip {
+  transform: rotateY(180deg);
+  transition: 0.4s;
+	transform-style: preserve-3d;
+}

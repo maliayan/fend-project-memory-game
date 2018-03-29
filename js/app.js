@@ -12,7 +12,7 @@ let cardList = ["diamond", "paper-plane-o", "anchor", "bolt", "cube", "leaf", "b
    var deckHtmlContent = '';
    cardList = shuffle(cardList);
    for(var i=0; i<cardList.length; i++){
-     deckHtmlContent += "<li class='card'><i class='fa fa-" + cardList[i] + "'></i></li>";
+     deckHtmlContent += "<li class='card flip'><i class='fa fa-" + cardList[i] + "'></i></li>";
    }
    document.querySelector('.deck').innerHTML = deckHtmlContent;
  };
@@ -130,8 +130,8 @@ function stopTime(){
  function trueSelection(){
    openCards[0].classList.add("match", "cannotSelect");
    openCards[1].classList.add("match", "cannotSelect");
-   openCards[1].classList.remove("show", "open");
-   openCards[0].classList.remove("show", "open");
+   openCards[1].classList.remove("show", "open", "flip");
+   openCards[0].classList.remove("show", "open", "flip");
    matchedCards.push(openCards[0]);
    matchedCards.push(openCards[1]);
    openCards = [];
