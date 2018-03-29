@@ -2,19 +2,17 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Explanation](#explanation)
 * [Contributing](#contributing)
 
-## Instructions
+## Explanation
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This is my submission for the third project of Google Front-End Web Development Nanodegree Program @ Udacity.
 
-To get started, open `js/app.js` and start building out the app's functionality
+I used the starter project provided by Udacity instructors. This was a static HTML page with some CSS styles and a JavaScript function for shuffle.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+I converted this static starter project to an interactive memory game via JavaScript. Also I added/edited some elements, classes and functions within the HTML and CSS files.
 
 ## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+This repository is for a project assignment of Google Front-End Web Development Nanodegree Program @ Udacity. Therefore, I will not accept pull requests.
