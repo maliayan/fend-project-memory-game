@@ -49,11 +49,34 @@ function shuffle(array) {
  */
 
  var card = document.getElementsByClassName("card");
- let openCards = [];
+ var openCards = [];
 
  var addOpenCards = function(){
    openCards.push(this);
+   if(openCards.length === 2){
+     if(openCards[0].innerHTML === openCards[1].innerHTML){
+       trueSelection();
+     } else {
+       falseSelection();
+     }
+   }
  };
+
+ function trueSelection(){
+   openCards[0].classList.add("match");
+   openCards[0].classList.remove("show", "open");
+   openCards[1].classList.add("match");
+   openCards[1].classList.remove("show", "open");
+   openCards = [];
+ };
+
+ function falseSelection(){
+    setTimeout(function(){
+        openCards[0].classList.remove("show", "open");
+        openCards[1].classList.remove("show", "open");
+        openCards = [];
+    },550);
+};
 
  var showCard = function(){
      this.classList.add("open", "show");
