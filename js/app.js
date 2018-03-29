@@ -57,7 +57,7 @@ function shuffle(array) {
   */
 
  function isFinished(){
-   if(matchedCards.length === 2){
+   if(matchedCards.length === 16){
      var message = document.getElementById("message");
      message.style.display = "block";
      stopTime();
