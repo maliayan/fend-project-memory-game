@@ -51,6 +51,9 @@ function shuffle(array) {
  var card = document.getElementsByClassName("card");
  var openCards = [];
 
+ var moves = document.querySelector(".moves");
+ moves.innerHTML = 0;
+
  var addOpenCards = function(){
    openCards.push(this);
    if(openCards.length === 2){
@@ -68,6 +71,7 @@ function shuffle(array) {
    openCards[1].classList.add("match");
    openCards[1].classList.remove("show", "open");
    openCards = [];
+   moves.innerHTML++;
  };
 
  function falseSelection(){
@@ -75,6 +79,7 @@ function shuffle(array) {
         openCards[0].classList.remove("show", "open");
         openCards[1].classList.remove("show", "open");
         openCards = [];
+        moves.innerHTML++;
     },550);
 };
 
