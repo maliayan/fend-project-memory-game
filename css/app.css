@@ -165,6 +165,26 @@ h1 {
   pointer-events: none;
 }
 
+/*
+ * Styles for red background color for unmatched cards
+ */
+
 .red {
     background: #c30505 !important;
+}
+
+/*
+ * Styles for shaking animation for unmatched cards
+ */
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.card.wiggle {
+  animation: wiggle 0.4s;
 }

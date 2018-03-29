@@ -146,11 +146,11 @@ function stopTime(){
   */
 
  function falseSelection(){
-   openCards[0].classList.add("red");
-   openCards[1].classList.add("red");
+   openCards[0].classList.add("red", "wiggle");
+   openCards[1].classList.add("red", "wiggle");
     setTimeout(function(){
-      openCards[0].classList.remove("show", "open", "cannotSelect", "red");
-      openCards[1].classList.remove("show", "open", "cannotSelect", "red");
+      openCards[0].classList.remove("show", "open", "cannotSelect", "red", "wiggle");
+      openCards[1].classList.remove("show", "open", "cannotSelect", "red", "wiggle");
       openCards = [];
       moves.innerHTML++;
       messageMoves.innerHTML++;
