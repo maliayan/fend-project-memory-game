@@ -55,6 +55,8 @@ function shuffle(array) {
  var messageMoves = document.querySelector(".messageMoves");
  messageMoves.innerHTML = 0;
  var messageRating = document.querySelector(".messageRating");
+ var time = document.querySelector(".time");
+ time.innerHTML = 0;
 
  function isFinished(){
    if(matchedCards.length === 2){
@@ -84,6 +86,7 @@ function startTime(){
     messageTime.innerHTML = 0;
     playTime = setInterval(function(){
       messageTime.innerHTML++;
+      time.innerHTML++;
     }, 1000);
   };
 

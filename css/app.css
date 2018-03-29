@@ -148,3 +148,11 @@ h1 {
   background-color: white;
   color: black;
 }
+
+/*
+ * Styles for play time
+ */
+
+ .time {
+   margin-left: 72px;
+ }
