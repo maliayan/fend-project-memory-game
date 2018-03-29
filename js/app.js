@@ -136,6 +136,9 @@ function stopTime(){
 };
 
  var showCard = function(){
+   if(document.querySelectorAll(".open").length === 2){
+     return false;
+  }
      this.classList.add("open", "show", "cannotSelect");
  };
 
