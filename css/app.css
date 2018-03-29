@@ -164,3 +164,7 @@ h1 {
 .cannotSelect {
   pointer-events: none;
 }
+
+.red {
+    background: #c30505 !important;
+}
