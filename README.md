@@ -2,8 +2,14 @@
 
 ## Table of Contents
 
+* [Play](#play)
 * [Explanation](#explanation)
 * [Contributing](#contributing)
+
+## Play
+
+You can play the game via this link. Enjoy!
+https://maliayan.github.io/fend-project-memory-game/
 
 ## Explanation
 
