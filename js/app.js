@@ -50,6 +50,16 @@ function shuffle(array) {
 
  var card = document.getElementsByClassName("card");
  var openCards = [];
+ var matchedCards = [];
+ var messageMoves = document.querySelector(".messageMoves");
+ messageMoves.innerHTML = 0;
+
+ function isFinished(){
+   if(matchedCards.length === 2){
+     var message = document.getElementById("message");
+     message.style.display = "block";
+   }
+ };
 
  var moves = document.querySelector(".moves");
  moves.innerHTML = 0;
@@ -67,11 +77,15 @@ function shuffle(array) {
 
  function trueSelection(){
    openCards[0].classList.add("match");
-   openCards[0].classList.remove("show", "open");
    openCards[1].classList.add("match");
    openCards[1].classList.remove("show", "open");
+   openCards[0].classList.remove("show", "open");
+   matchedCards.push(openCards[0]);
+   matchedCards.push(openCards[1]);
    openCards = [];
    moves.innerHTML++;
+   messageMoves.innerHTML++;
+   isFinished();
  };
 
  function falseSelection(){
@@ -80,6 +94,7 @@ function shuffle(array) {
         openCards[1].classList.remove("show", "open");
         openCards = [];
         moves.innerHTML++;
+        messageMoves.innerHTML++;
     },550);
 };
 
