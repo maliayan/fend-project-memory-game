@@ -53,6 +53,7 @@ function shuffle(array) {
  var matchedCards = [];
  var messageMoves = document.querySelector(".messageMoves");
  messageMoves.innerHTML = 0;
+ var messageRating = document.querySelector(".messageRating");
 
  function isFinished(){
    if(matchedCards.length === 4){
@@ -67,8 +68,10 @@ function shuffle(array) {
  function starRating(){
    if(moves.innerHTML == 4){
      document.querySelector(".star-3").style.visibility = "hidden";
+     messageRating.innerHTML = '<i class="fa fa-star"></i><i class="fa fa-star"></i>';
    } if(moves.innerHTML == 10){
      document.querySelector(".star-2").style.visibility = "hidden";
+     messageRating.innerHTML = '<i class="fa fa-star"></i>';
    }
  };
 
