@@ -111,8 +111,8 @@ function stopTime(){
  };
 
  function trueSelection(){
-   openCards[0].classList.add("match");
-   openCards[1].classList.add("match");
+   openCards[0].classList.add("match", "cannotSelect");
+   openCards[1].classList.add("match", "cannotSelect");
    openCards[1].classList.remove("show", "open");
    openCards[0].classList.remove("show", "open");
    matchedCards.push(openCards[0]);
@@ -126,17 +126,17 @@ function stopTime(){
 
  function falseSelection(){
     setTimeout(function(){
-        openCards[0].classList.remove("show", "open");
-        openCards[1].classList.remove("show", "open");
-        openCards = [];
-        moves.innerHTML++;
-        messageMoves.innerHTML++;
-        starRating();
+      openCards[0].classList.remove("show", "open", "cannotSelect");
+      openCards[1].classList.remove("show", "open", "cannotSelect");
+      openCards = [];
+      moves.innerHTML++;
+      messageMoves.innerHTML++;
+      starRating();
     },550);
 };
 
  var showCard = function(){
-     this.classList.add("open", "show");
+     this.classList.add("open", "show", "cannotSelect");
  };
 
  for (var i=0; i < card.length; i++) {
