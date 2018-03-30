@@ -78,10 +78,10 @@ function shuffle(array) {
   */
 
  function starRating(){
-   if(moves.innerHTML == 4){
+   if(moves.innerHTML == 12){
      document.querySelector(".star-3").style.visibility = "hidden";
      messageRating.innerHTML = '<i class="fa fa-star"></i><i class="fa fa-star"></i>';
-   } if(moves.innerHTML == 10){
+   } if(moves.innerHTML == 24){
      document.querySelector(".star-2").style.visibility = "hidden";
      messageRating.innerHTML = '<i class="fa fa-star"></i>';
    }
